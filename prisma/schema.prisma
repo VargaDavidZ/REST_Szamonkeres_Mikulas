@@ -36,5 +36,5 @@ model Gyerek{
   magatartas Boolean
   //ajandek Ajandek @relation(fields: [ajandekId], references: [id])
   ajandek Ajandek[]
-  ajandekId Int
+  //ajandekId Int
 }

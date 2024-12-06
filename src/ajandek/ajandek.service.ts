@@ -26,9 +26,13 @@ export class AjandekService {
   }
 
   findOne(id: number) {
-    return this.db.ajandek.findUnique({
-      where: {id}
-    })
+
+      return this.db.ajandek.findUnique({
+        where: {id}
+      })
+    
+    
+   
   }
 
   update(id: number, updateAjandekDto: UpdateAjandekDto) {

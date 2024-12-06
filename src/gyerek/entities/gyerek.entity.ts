@@ -3,5 +3,5 @@ export class Gyerek {
     nev: string
     lakcim: string
     magatartas: boolean
-    ajandekId: number
+   // ajandekId: number
 }

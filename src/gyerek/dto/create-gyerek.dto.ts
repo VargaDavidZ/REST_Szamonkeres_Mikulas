@@ -7,6 +7,6 @@ export class CreateGyerekDto {
     lakcim: string
     @IsDefined()
     magatartas: boolean
-    @IsDefined()
-    ajandekId: number
+    //@IsDefined()
+    //ajandekId: number
 }
