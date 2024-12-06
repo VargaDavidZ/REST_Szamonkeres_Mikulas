@@ -40,17 +40,26 @@ export class GyerekService {
 
   async deleteToyFromChild(childId: number, toyId: number)
   {
-    return await this.db.gyerek.update({
-      where: {id: childId},
-      data:{
-        ajandek: {
-          disconnect: {id:toyId}
+
+    try{
+      return await this.db.gyerek.update({
+        where: {id: childId},
+        data:{
+          ajandek: {
+            disconnect: {id:toyId}
+          }
+        },
+        include: {
+          ajandek: true
         }
-      },
-      include: {
-        ajandek: true
-      }
-    })
+      })
+    }
+    catch
+    {
+      throw new NotFoundException("Nincs ilyen Gyerek/Ajándék a megadott id-vel")
+    }
+
+    
   }
 
  

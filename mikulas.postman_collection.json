@@ -541,6 +541,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Add new child (invalid)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nev\": \"test\",\n    \"lakcim\": \"test\",\n    \"magatartas\": \"asdasdasd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/children",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

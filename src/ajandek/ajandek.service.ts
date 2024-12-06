@@ -44,10 +44,6 @@ export class AjandekService {
       throw new NotFoundException("Nincs ilyen ajándék")
     }
 
-      
-    
-    
-   
   }
 
   async update(id: number, updateAjandekDto: UpdateAjandekDto) {
