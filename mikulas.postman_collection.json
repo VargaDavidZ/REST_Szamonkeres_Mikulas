@@ -8,6 +8,20 @@
 	"item": [
 		{
 			"name": "Get All Toys",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [
@@ -32,6 +46,20 @@
 		},
 		{
 			"name": "Get One Toy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -70,6 +98,17 @@
 		},
 		{
 			"name": "Delete One Toy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -89,6 +128,17 @@
 		},
 		{
 			"name": "Add New Toy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -116,6 +166,20 @@
 		},
 		{
 			"name": "Add New Toy (Invalid)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -143,6 +207,17 @@
 		},
 		{
 			"name": "Update Toy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -350,14 +425,11 @@
 		{
 			"name": "Add new child",
 			"request": {
-				"auth": {
-					"type": "inherit"
-				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nev\": \"test\",\n    \"lakcim\": \"test\",\n    \"magatartas\": true,\n    \"ajandekId\": 1\n}",
+					"raw": "{\n    \"nev\": \"test\",\n    \"lakcim\": \"test\",\n    \"magatartas\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
