@@ -1,7 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateAjandekDto } from './dto/create-ajandek.dto';
 import { UpdateAjandekDto } from './dto/update-ajandek.dto';
 import { PrismaService } from 'src/prisma.service';
+import { NotFoundError } from 'rxjs';
 
 @Injectable()
 export class AjandekService {
@@ -15,21 +16,35 @@ export class AjandekService {
   }
 
 
-  create(createAjandekDto: CreateAjandekDto) {
-   return this.db.ajandek.create({
-    data: createAjandekDto 
-   })
+  async create(createAjandekDto: CreateAjandekDto) {
+    try{
+      return await this.db.ajandek.create({
+        data: createAjandekDto 
+       })
+    }
+    catch{
+      throw new BadRequestException("Helytelen bemeneti adatok")
+    }
+   
   }
 
   findAll() {
     return this.db.ajandek.findMany()
   }
 
-  findOne(id: number) {
+  async findOne(id: number) {
 
-      return this.db.ajandek.findUnique({
+    try
+    {
+      return await this.db.ajandek.findUniqueOrThrow({
         where: {id}
       })
+    }
+    catch{
+      throw new NotFoundException("Nincs ilyen ajándék")
+    }
+
+      
     
     
    
