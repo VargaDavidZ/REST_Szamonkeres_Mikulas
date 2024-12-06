@@ -50,15 +50,15 @@ export class AjandekService {
    
   }
 
-  update(id: number, updateAjandekDto: UpdateAjandekDto) {
+  async update(id: number, updateAjandekDto: UpdateAjandekDto) {
     try{
-      return this.db.ajandek.update({
+      return await this.db.ajandek.update({
         where: {id},
         data: updateAjandekDto
       })
     }
     catch{
-      return undefined
+      throw new BadRequestException("Helytelen bemeneti adatok")
     }
   }
 

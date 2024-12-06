@@ -86,9 +86,9 @@ export class GyerekService {
     
   }
 
-  update(id: number, updateGyerekDto: UpdateGyerekDto) {
+  async update(id: number, updateGyerekDto: UpdateGyerekDto) {
    try{
-    return this.db.gyerek.update({
+    return await this.db.gyerek.update({
       where: {id},
       data: updateGyerekDto
     })
