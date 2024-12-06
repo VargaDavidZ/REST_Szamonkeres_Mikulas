@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "053d30c3-a7a8-4776-8e87-b4e8683a0bfd",
+		"name": "mikulas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40231795"
+	},
+	"item": [
+		{
+			"name": "Get All Toys",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/toys",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Toy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/toys/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toys",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Toy (Wrong ID)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/toys/1234",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toys",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete One Toy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/toys/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toys",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Toy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Toy train\",\r\n    \"material\": \"wood\",\r\n    \"weight\": 1.25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/toys",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Toy (Invalid)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": 78,\r\n    \"material\": \"air\",\r\n    \"weight\": -5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/toys",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Toy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"weight\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/toys/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toys",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Toy (Invalid)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"material\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/toys/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toys",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Toy (Wrong ID)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"PlayCube X\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/toys/1234",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"toys",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Children",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/children",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Toy to Child",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/children/2/toys/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children",
+						"2",
+						"toys",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Toy from Child",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/children/2/toys/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children",
+						"2",
+						"toys",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Children",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/children",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Child",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/children/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete One Child",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/children/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new child",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nev\": \"test\",\n    \"lakcim\": \"test\",\n    \"magatartas\": true,\n    \"ajandekId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/children",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Child",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nev\": \"changed name\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/children/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Child Invalid",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lakcim\": 1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/children/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updat Child Wrong Id",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nev\": \"changed name\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/children/20",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"children",
+						"20"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
